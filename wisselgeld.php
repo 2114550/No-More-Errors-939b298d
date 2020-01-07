@@ -5,11 +5,12 @@ try {
     } else {
         throw new Exception("Geen bedrag meegegeven");
     }
-    if (!ctype_digit($waarde)) {
-        throw new Exception("Geen geldig bedrag meegegeven");
-    }
+
     if ($waarde < 0) {
         throw new Exception("Negatief bedrag meegegeven");
+    }
+    if (!ctype_digit($waarde)) {
+        throw new Exception("Geen geldig bedrag meegegeven");
     }
 } catch (Exception $exception) {
     echo $exception->getMessage();
